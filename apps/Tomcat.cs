@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:73fdfa50cf60fefe812a08ae510cc01aa4bbc2c0609c7a9a55471f48fc4e1662
-size 844
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DevelopmentToolList.apps
+{
+    class Tomcat : SuperApp
+    {
+
+        // 初始化tomcat
+        public void initTomcat(string tomcatPath)
+        {
+            string[] commands = new string[3];
+            commands[0] = tomcatPath.Split(':')[0] + ":";
+            commands[1] = "cd " + tomcatPath.Split(':')[1];
+            commands[2] = "service install Tomcat";
+            Utils.execCMD(commands);
+        }
+
+        // 启动服务
+        public void startTomcat(Button stopBtn, Button restartBtn, Button startBtn, Panel tomcat_status,
+            TextBox logInfo)
+        {
+            startService(stopBtn, restartBtn, startBtn, tomcat_status, logInfo, "net start Tomcat",
+                "Tomcat", 8080);
+        }
+    }
+}
