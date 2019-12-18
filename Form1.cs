@@ -55,6 +55,22 @@ namespace DevelopmentToolList
                 // 没有开启
                 this.redis_status.BackColor = Color.Red;
             }
+
+            /*
+             * 检查Tomcat是否开启
+             */
+            if (Utils.testConnect(8080))
+            {
+                // 开启成功
+                this.tomcat_status.BackColor = Color.Lime;
+                this.logInfo.AppendText("Tomcat启动成功！  " + DateTime.Now.ToLongTimeString().ToString() + "\r\n");
+
+            }
+            else
+            {
+                // 没有开启
+                this.tomcat_status.BackColor = Color.Red;
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -165,7 +181,7 @@ namespace DevelopmentToolList
                     break;
                 case "Tomcat":
                     {
-                        new Redis().startRedis(this.stop, this.restart, this.start, this.tomcat_status,
+                        new Tomcat().startTomcatService(this.stop, this.restart, this.start, this.tomcat_status,
                             this.logInfo);
                     }
                     break;
@@ -197,7 +213,8 @@ namespace DevelopmentToolList
                     break;
                 case "Tomcat":
                     {
-
+                        new Tomcat().stopTomcatService(this.stop, this.restart, this.start, this.tomcat_status,
+                            this.logInfo);
                     }
                     break;
                 default:
@@ -228,7 +245,8 @@ namespace DevelopmentToolList
                     break;
                 case "Tomcat":
                     {
-
+                        new Tomcat().restartTomcatService(this.stop, this.restart, this.start, this.tomcat_status,
+                            this.logInfo);
                     }
                     break;
                 default:

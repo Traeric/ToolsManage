@@ -22,11 +22,27 @@ namespace DevelopmentToolList.apps
         }
 
         // 启动服务
-        public void startTomcat(Button stopBtn, Button restartBtn, Button startBtn, Panel tomcat_status,
+        public void startTomcatService(Button stopBtn, Button restartBtn, Button startBtn, Panel tomcat_status,
             TextBox logInfo)
         {
             startService(stopBtn, restartBtn, startBtn, tomcat_status, logInfo, "net start Tomcat",
                 "Tomcat", 8080);
+        }
+
+        // 关闭tomcat服务
+        public void stopTomcatService(Button stop, Button restart, Button start, Panel mysql_status,
+            TextBox logInfo)
+        {
+            stopService(stop, restart, start, mysql_status, logInfo, "net stop Tomcat",
+                "Tomcat", 8080);
+        }
+
+        // 重启mysql服务
+        public void restartTomcatService(Button stop, Button restart, Button start, Panel mysql_status,
+            TextBox logInfo)
+        {
+            restartService(stop, restart, start, mysql_status, logInfo,
+                new string[2] { "net stop Tomcat", "net start Tomcat" }, "Tomcat", 8080);
         }
     }
 }
