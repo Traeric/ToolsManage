@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using DevelopmentToolList.apps;
 using System.Xml.Linq;
+using System.Diagnostics;
 
 namespace DevelopmentToolList
 {
@@ -19,6 +20,9 @@ namespace DevelopmentToolList
         private Color prevAppTextColor;  // 上一个按钮对应的文字颜色
         private Button prevApp;
         private string currentApp;
+
+        // 软件根目录
+        public static string rootPath = System.AppDomain.CurrentDomain.BaseDirectory;
 
 
         public MainForm()
@@ -304,6 +308,196 @@ namespace DevelopmentToolList
             xd.Save(settings_path);
             // 修改成功
             MessageBox.Show("修改Maven本地仓库成功！", "修改成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // 退出程序
+        private void 退出XToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);  // 关闭程序
+        }
+
+        // 打开mysql所在的目录
+        private void mySQLToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(rootPath + "Applications\\MySQL");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("打开目录出错！", "打开出错", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // 打开redis所在的目录
+        private void redisToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(rootPath + "Applications\\redis");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("打开目录出错！", "打开出错", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // 打开tomcat目录
+        private void tomcatToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(rootPath + "Applications\\Tomcat");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("打开目录出错！", "打开出错", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // 打开maven目录
+        private void mavenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(rootPath + "Applications\\Maven");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("打开目录出错！", "打开出错", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // 打开软件根目录
+        private void 软件根目录ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(rootPath);
+            } catch (Exception)
+            {
+                MessageBox.Show("打开目录出错！", "打开出错", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // 打开host文件
+        private void 打开hostToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("explorer.exe", "C:\\Windows\\System32\\drivers\\etc\\hosts");
+            } catch (Exception)
+            {
+                MessageBox.Show("打开文件出错！", "打开出错", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // 打开cmd窗口
+        private void 打开cmdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("cmd.exe");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("打开cmd窗口出错！", "打开出错", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // cmd操作mysql
+        private void Cmd_MySQLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process proc = new Process();
+                proc.StartInfo.WorkingDirectory = rootPath + "scripts";
+                proc.StartInfo.FileName = "MySQL.bat";
+                proc.Start();
+                proc.WaitForExit();
+            } catch (Exception)
+            {
+                MessageBox.Show("打开cmd窗口出错！", "打开出错", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // cmd操作redis
+        private void cmd操作redisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process proc = new Process();
+                proc.StartInfo.WorkingDirectory = rootPath + "scripts";
+                proc.StartInfo.FileName = "redis.bat";
+                proc.Start();
+                proc.WaitForExit();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("打开cmd窗口出错！", "打开出错", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void github仓库地址ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Traeric/ToolsManage");
+        }
+
+        private void 作者GitHub主页ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Traeric");
+        }
+
+        // 启动全部服务
+        private void 启动全部ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 打开窗口
+            this.Show();
+            this.WindowState = FormWindowState.Normal;   // 显示窗口
+            this.ShowInTaskbar = true;     // 显示在系统状态栏
+            // 启动mysql
+            new Mysql().startMySQLService(this.stop, this.restart, this.start, this.mysql_status,
+                            this.logInfo);
+            // 启动redis
+            new Redis().startRedis(this.stop, this.restart, this.start, this.redis_status,
+                            this.logInfo);
+            // 启动tomcat
+            new Tomcat().startTomcatService(this.stop, this.restart, this.start, this.tomcat_status,
+                            this.logInfo);
+        }
+
+        private void 停止全部ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 打开窗口
+            this.Show();
+            this.WindowState = FormWindowState.Normal;   // 显示窗口
+            this.ShowInTaskbar = true;     // 显示在系统状态栏
+            // 停止mysql
+            new Mysql().stopMySQLService(this.stop, this.restart, this.start, this.mysql_status,
+                            this.logInfo);
+            // 停止redis
+            new Redis().stopRedisService(this.stop, this.restart, this.start, this.redis_status,
+                            this.logInfo);
+            // 停止tomcat
+            new Tomcat().stopTomcatService(this.stop, this.restart, this.start, this.tomcat_status,
+                            this.logInfo);
+        }
+
+        private void 重启全部ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 打开窗口
+            this.Show();
+            this.WindowState = FormWindowState.Normal;   // 显示窗口
+            this.ShowInTaskbar = true;     // 显示在系统状态栏
+            // 重启mysql
+            new Mysql().restartMySQLService(this.stop, this.restart, this.start, this.mysql_status,
+                            this.logInfo);
+            // 重启redis
+            new Redis().restartRedisService(this.stop, this.restart, this.start, this.redis_status,
+                            this.logInfo);
+            // 重启tomcat
+            new Tomcat().restartTomcatService(this.stop, this.restart, this.start, this.tomcat_status,
+                            this.logInfo);
         }
     }
 }

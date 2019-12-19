@@ -98,7 +98,52 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mysql.jpg" />
+    <None Include="Resources\redis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mysql.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tomcat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maven.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jdk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b_sbrowse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\terminal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cmd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_lastorigin_press_wpp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b_drop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b_tblops.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marker-gold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b_bookmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\34062997.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

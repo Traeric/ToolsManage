@@ -8,3 +8,4 @@ G:\ToolsManage\obj\Debug\ToolsManage.csproj.CopyComplete
 G:\ToolsManage\obj\Debug\ToolsManage.exe
 G:\ToolsManage\obj\Debug\ToolsManage.pdb
 G:\ToolsManage\obj\Debug\DevelopmentToolList.MainForm.resources
+G:\ToolsManage\obj\Debug\ToolsManage.csprojAssemblyReference.cache
