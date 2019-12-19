@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolsManage", "ToolsManage.csproj", "{C835FCB0-0B76-44B4-937A-9C880DF68B65}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ToolsManageSetup", "H:\ToolsManageSetup\ToolsManageSetup.vdproj", "{67FE18D6-B926-49CA-8C23-C99B0F3D3A04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C835FCB0-0B76-44B4-937A-9C880DF68B65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C835FCB0-0B76-44B4-937A-9C880DF68B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C835FCB0-0B76-44B4-937A-9C880DF68B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C835FCB0-0B76-44B4-937A-9C880DF68B65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67FE18D6-B926-49CA-8C23-C99B0F3D3A04}.Debug|Any CPU.ActiveCfg = Debug
+		{67FE18D6-B926-49CA-8C23-C99B0F3D3A04}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFA0FD85-B5F1-48E6-B6F2-3108B9803487}
+	EndGlobalSection
+EndGlobal

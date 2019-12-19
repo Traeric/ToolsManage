@@ -12,15 +12,16 @@ using System.Xml.Linq;
 
 namespace DevelopmentToolList
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         // 软件对应的当前按钮的颜色
         private Color prevAppBtnColor;
+        private Color prevAppTextColor;  // 上一个按钮对应的文字颜色
         private Button prevApp;
         private string currentApp;
 
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -148,9 +149,11 @@ namespace DevelopmentToolList
             if (prevApp != null) 
             {
                 prevApp.BackColor = prevAppBtnColor;
+                prevApp.ForeColor = prevAppTextColor;
             }
             // 更新上一个按钮信息
             this.prevAppBtnColor = currentBtn.BackColor;
+            this.prevAppTextColor = currentBtn.ForeColor;
             this.prevApp = currentBtn;
 
             // 设置当前按钮的颜色
@@ -300,7 +303,7 @@ namespace DevelopmentToolList
             xd.Root.Add(element);
             xd.Save(settings_path);
             // 修改成功
-
+            MessageBox.Show("修改Maven本地仓库成功！", "修改成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

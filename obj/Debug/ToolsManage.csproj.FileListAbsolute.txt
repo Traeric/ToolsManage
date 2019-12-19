@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:613d2d8d16c4c2bc639687e812e507292c57cadf09ef5b77e4bd95618beb2aa0
-size 583
+G:\ToolsManage\bin\Debug\ToolsManage.exe.config
+G:\ToolsManage\bin\Debug\ToolsManage.exe
+G:\ToolsManage\bin\Debug\ToolsManage.pdb
+G:\ToolsManage\bin\Debug\MySql.Data.dll
+G:\ToolsManage\obj\Debug\ToolsManage.Properties.Resources.resources
+G:\ToolsManage\obj\Debug\ToolsManage.csproj.GenerateResource.cache
+G:\ToolsManage\obj\Debug\ToolsManage.csproj.CopyComplete
+G:\ToolsManage\obj\Debug\ToolsManage.exe
+G:\ToolsManage\obj\Debug\ToolsManage.pdb
+G:\ToolsManage\obj\Debug\DevelopmentToolList.MainForm.resources

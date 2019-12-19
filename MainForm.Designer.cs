@@ -1,6 +1,6 @@
 ﻿namespace DevelopmentToolList
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.topMenu = new System.Windows.Forms.MenuStrip();
             this.文件FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.新建NToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,6 +70,12 @@
             this.Maven = new System.Windows.Forms.Button();
             this.left_line = new System.Windows.Forms.Label();
             this.rightPanel = new System.Windows.Forms.Panel();
+            this.mavenPanel = new System.Windows.Forms.Panel();
+            this.setRepository = new System.Windows.Forms.GroupBox();
+            this.save_repository = new System.Windows.Forms.Button();
+            this.select_maven_repository = new System.Windows.Forms.Button();
+            this.maven_repository = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.logGroup = new System.Windows.Forms.GroupBox();
             this.printButtom = new System.Windows.Forms.Button();
             this.logInfo = new System.Windows.Forms.TextBox();
@@ -121,23 +127,17 @@
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.退出程序ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.mavenPanel = new System.Windows.Forms.Panel();
-            this.setRepository = new System.Windows.Forms.GroupBox();
             this.mavenFolder = new System.Windows.Forms.FolderBrowserDialog();
-            this.label1 = new System.Windows.Forms.Label();
-            this.maven_repository = new System.Windows.Forms.TextBox();
-            this.select_maven_repository = new System.Windows.Forms.Button();
-            this.save_repository = new System.Windows.Forms.Button();
             this.topMenu.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
+            this.mavenPanel.SuspendLayout();
+            this.setRepository.SuspendLayout();
             this.logGroup.SuspendLayout();
             this.runInfo.SuspendLayout();
             this.operationButtom.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            this.mavenPanel.SuspendLayout();
-            this.setRepository.SuspendLayout();
             this.SuspendLayout();
             // 
             // topMenu
@@ -514,6 +514,79 @@
             this.rightPanel.Name = "rightPanel";
             this.rightPanel.Size = new System.Drawing.Size(470, 425);
             this.rightPanel.TabIndex = 9;
+            // 
+            // mavenPanel
+            // 
+            this.mavenPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.mavenPanel.Controls.Add(this.setRepository);
+            this.mavenPanel.Location = new System.Drawing.Point(0, 0);
+            this.mavenPanel.Name = "mavenPanel";
+            this.mavenPanel.Size = new System.Drawing.Size(470, 425);
+            this.mavenPanel.TabIndex = 3;
+            // 
+            // setRepository
+            // 
+            this.setRepository.Controls.Add(this.save_repository);
+            this.setRepository.Controls.Add(this.select_maven_repository);
+            this.setRepository.Controls.Add(this.maven_repository);
+            this.setRepository.Controls.Add(this.label1);
+            this.setRepository.Location = new System.Drawing.Point(10, 6);
+            this.setRepository.Name = "setRepository";
+            this.setRepository.Size = new System.Drawing.Size(448, 110);
+            this.setRepository.TabIndex = 0;
+            this.setRepository.TabStop = false;
+            this.setRepository.Text = "设置Maven仓库";
+            // 
+            // save_repository
+            // 
+            this.save_repository.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(249)))), ((int)(((byte)(235)))));
+            this.save_repository.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.save_repository.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(176)))));
+            this.save_repository.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(255)))), ((int)(((byte)(214)))));
+            this.save_repository.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(255)))), ((int)(((byte)(214)))));
+            this.save_repository.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.save_repository.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
+            this.save_repository.Location = new System.Drawing.Point(335, 62);
+            this.save_repository.Name = "save_repository";
+            this.save_repository.Size = new System.Drawing.Size(105, 30);
+            this.save_repository.TabIndex = 3;
+            this.save_repository.Text = "保存";
+            this.save_repository.UseVisualStyleBackColor = false;
+            this.save_repository.Click += new System.EventHandler(this.save_repository_Click);
+            // 
+            // select_maven_repository
+            // 
+            this.select_maven_repository.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(246)))), ((int)(((byte)(236)))));
+            this.select_maven_repository.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.select_maven_repository.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(218)))), ((int)(((byte)(177)))));
+            this.select_maven_repository.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(203)))));
+            this.select_maven_repository.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(203)))));
+            this.select_maven_repository.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.select_maven_repository.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
+            this.select_maven_repository.Location = new System.Drawing.Point(365, 18);
+            this.select_maven_repository.Name = "select_maven_repository";
+            this.select_maven_repository.Size = new System.Drawing.Size(75, 23);
+            this.select_maven_repository.TabIndex = 2;
+            this.select_maven_repository.Text = "浏览";
+            this.select_maven_repository.UseVisualStyleBackColor = false;
+            this.select_maven_repository.Click += new System.EventHandler(this.select_maven_repository_Click);
+            // 
+            // maven_repository
+            // 
+            this.maven_repository.Location = new System.Drawing.Point(89, 19);
+            this.maven_repository.Name = "maven_repository";
+            this.maven_repository.ReadOnly = true;
+            this.maven_repository.Size = new System.Drawing.Size(270, 21);
+            this.maven_repository.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "选择地址：";
             // 
             // logGroup
             // 
@@ -951,84 +1024,11 @@
             this.退出程序ToolStripMenuItem.Text = "退出程序";
             this.退出程序ToolStripMenuItem.Click += new System.EventHandler(this.退出程序ToolStripMenuItem_Click);
             // 
-            // mavenPanel
-            // 
-            this.mavenPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.mavenPanel.Controls.Add(this.setRepository);
-            this.mavenPanel.Location = new System.Drawing.Point(0, 0);
-            this.mavenPanel.Name = "mavenPanel";
-            this.mavenPanel.Size = new System.Drawing.Size(470, 425);
-            this.mavenPanel.TabIndex = 3;
-            // 
-            // setRepository
-            // 
-            this.setRepository.Controls.Add(this.save_repository);
-            this.setRepository.Controls.Add(this.select_maven_repository);
-            this.setRepository.Controls.Add(this.maven_repository);
-            this.setRepository.Controls.Add(this.label1);
-            this.setRepository.Location = new System.Drawing.Point(10, 6);
-            this.setRepository.Name = "setRepository";
-            this.setRepository.Size = new System.Drawing.Size(448, 110);
-            this.setRepository.TabIndex = 0;
-            this.setRepository.TabStop = false;
-            this.setRepository.Text = "设置Maven仓库";
-            // 
             // mavenFolder
             // 
             this.mavenFolder.Description = "选择maven仓库目录";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "选择地址：";
-            // 
-            // maven_repository
-            // 
-            this.maven_repository.Location = new System.Drawing.Point(89, 19);
-            this.maven_repository.Name = "maven_repository";
-            this.maven_repository.ReadOnly = true;
-            this.maven_repository.Size = new System.Drawing.Size(270, 21);
-            this.maven_repository.TabIndex = 1;
-            // 
-            // select_maven_repository
-            // 
-            this.select_maven_repository.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(246)))), ((int)(((byte)(236)))));
-            this.select_maven_repository.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.select_maven_repository.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(218)))), ((int)(((byte)(177)))));
-            this.select_maven_repository.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(203)))));
-            this.select_maven_repository.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(203)))));
-            this.select_maven_repository.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.select_maven_repository.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(162)))), ((int)(((byte)(60)))));
-            this.select_maven_repository.Location = new System.Drawing.Point(365, 18);
-            this.select_maven_repository.Name = "select_maven_repository";
-            this.select_maven_repository.Size = new System.Drawing.Size(75, 23);
-            this.select_maven_repository.TabIndex = 2;
-            this.select_maven_repository.Text = "浏览";
-            this.select_maven_repository.UseVisualStyleBackColor = false;
-            this.select_maven_repository.Click += new System.EventHandler(this.select_maven_repository_Click);
-            // 
-            // save_repository
-            // 
-            this.save_repository.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(249)))), ((int)(((byte)(235)))));
-            this.save_repository.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.save_repository.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(231)))), ((int)(((byte)(176)))));
-            this.save_repository.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(255)))), ((int)(((byte)(214)))));
-            this.save_repository.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(255)))), ((int)(((byte)(214)))));
-            this.save_repository.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.save_repository.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(194)))), ((int)(((byte)(58)))));
-            this.save_repository.Location = new System.Drawing.Point(335, 62);
-            this.save_repository.Name = "save_repository";
-            this.save_repository.Size = new System.Drawing.Size(105, 30);
-            this.save_repository.TabIndex = 3;
-            this.save_repository.Text = "保存";
-            this.save_repository.UseVisualStyleBackColor = false;
-            this.save_repository.Click += new System.EventHandler(this.save_repository_Click);
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1040,7 +1040,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ToolList 1.0.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -1051,6 +1051,9 @@
             this.menuPanel.PerformLayout();
             this.leftPanel.ResumeLayout(false);
             this.rightPanel.ResumeLayout(false);
+            this.mavenPanel.ResumeLayout(false);
+            this.setRepository.ResumeLayout(false);
+            this.setRepository.PerformLayout();
             this.logGroup.ResumeLayout(false);
             this.logGroup.PerformLayout();
             this.runInfo.ResumeLayout(false);
@@ -1058,9 +1061,6 @@
             this.operationButtom.ResumeLayout(false);
             this.operationButtom.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            this.mavenPanel.ResumeLayout(false);
-            this.setRepository.ResumeLayout(false);
-            this.setRepository.PerformLayout();
             this.ResumeLayout(false);
 
         }
