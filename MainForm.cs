@@ -8,8 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using DevelopmentToolList.apps;
-using System.Xml.Linq;
 using System.Diagnostics;
+using ToolsManage;
+using System.IO;
 
 namespace DevelopmentToolList
 {
@@ -32,7 +33,6 @@ namespace DevelopmentToolList
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.mavenPanel.Visible = false;
             /* 
              * 检查是否开启了mysql 
              */
@@ -161,16 +161,13 @@ namespace DevelopmentToolList
             this.prevApp = currentBtn;
 
             // 设置当前按钮的颜色
-            currentBtn.BackColor = Color.White;
-            currentBtn.ForeColor = Color.Black;
+            currentBtn.BackColor = this.backColor.BackColor;
+            currentBtn.ForeColor = this.backColor.ForeColor;
 
             // 让所有的按钮可以点击
             this.start.Enabled = true;
             this.stop.Enabled = true;
             this.restart.Enabled = true;
-
-            // 显示面板
-            this.mavenPanel.Visible = false;
         }
 
         // 启动服务
@@ -275,39 +272,9 @@ namespace DevelopmentToolList
             setAppBtn("Maven启停", this.Maven);
             this.currentApp = "Maven";
 
-            // 显示Maven面板
-            this.mavenPanel.Visible = true;
-        }
-
-        // 显示选择maven仓库的控件
-        private void select_maven_repository_Click(object sender, EventArgs e)
-        {
-            if (this.mavenFolder.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                string maven_repository_path = this.mavenFolder.SelectedPath;
-                this.maven_repository.Text = maven_repository_path;
-            }
-        }
-
-        // 设置maven仓库的路径
-        private void save_repository_Click(object sender, EventArgs e)
-        {
-            string currentPath = System.AppDomain.CurrentDomain.BaseDirectory;
-            // 获取路径
-            string maven_path = this.maven_repository.Text;
-            // 获取settings文件的路径
-            string settings_path = currentPath + "Applications\\Maven\\conf\\settings.xml";
-            XDocument xd = XDocument.Load(settings_path);
-            IEnumerable<XElement> ie = xd.Root.Descendants(xd.Root.Name.Namespace + "localRepository");
-            if (ie.Count() > 0)
-            {
-                ie.First().Remove();
-            }
-            XElement element = new XElement(new XElement(xd.Root.Name.Namespace + "localRepository", maven_path));
-            xd.Root.Add(element);
-            xd.Save(settings_path);
-            // 修改成功
-            MessageBox.Show("修改Maven本地仓库成功！", "修改成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // 显示Maven窗口
+            MavenForm mavenForm = new MavenForm();
+            mavenForm.Show();
         }
 
         // 退出程序
@@ -498,6 +465,50 @@ namespace DevelopmentToolList
             // 重启tomcat
             new Tomcat().restartTomcatService(this.stop, this.restart, this.start, this.tomcat_status,
                             this.logInfo);
+        }
+
+        // 点击jdk应用按钮
+        private void JDK_Click(object sender, EventArgs e)
+        {
+            setAppBtn("JDK启停", this.JDK);
+            this.currentApp = "JDK";
+
+            // 显示jdk窗口
+            JDKForm jdkForm = new JDKForm();
+            jdkForm.Show();
+        }
+
+        // 显示jdk目录
+        private void jDKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(rootPath + "Applications\\JDK");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("打开目录出错！", "打开出错", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // 打印日志功能
+        private void printButtom_Click(object sender, EventArgs e)
+        {
+            // 获取日志信息
+            string log = this.logInfo.Text;
+            if (this.saveLog.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter file = new StreamWriter(this.saveLog.FileName))
+                {
+                    file.WriteLineAsync(log);
+                }
+                DialogResult result = MessageBox.Show("保存日志文件成功，是否打开？", "保存成功", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                
+                if (result == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start("explorer.exe", this.saveLog.FileName);
+                }
+            }
         }
     }
 }
