@@ -11,6 +11,7 @@ using DevelopmentToolList.apps;
 using System.Diagnostics;
 using ToolsManage;
 using System.IO;
+using System.Threading;
 
 namespace DevelopmentToolList
 {
@@ -40,7 +41,7 @@ namespace DevelopmentToolList
             {
                 // 开启成功
                 this.mysql_status.BackColor = Color.Lime;
-                this.logInfo.AppendText("MySQL启动成功！  " + DateTime.Now.ToLongTimeString().ToString() + "\r\n");
+                this.logInfo.AppendText("MySQL正在运行！  " + DateTime.Now.ToLongTimeString().ToString() + "\r\n");
             } else
             {
                 // 没有开启
@@ -54,7 +55,7 @@ namespace DevelopmentToolList
             {
                 // 开启成功
                 this.redis_status.BackColor = Color.Lime;
-                this.logInfo.AppendText("redis启动成功！  " + DateTime.Now.ToLongTimeString().ToString() + "\r\n");
+                this.logInfo.AppendText("redis正在运行！  " + DateTime.Now.ToLongTimeString().ToString() + "\r\n");
 
             }
             else
@@ -70,7 +71,7 @@ namespace DevelopmentToolList
             {
                 // 开启成功
                 this.tomcat_status.BackColor = Color.Lime;
-                this.logInfo.AppendText("Tomcat启动成功！  " + DateTime.Now.ToLongTimeString().ToString() + "\r\n");
+                this.logInfo.AppendText("Tomcat正在运行！  " + DateTime.Now.ToLongTimeString().ToString() + "\r\n");
 
             }
             else
@@ -121,7 +122,9 @@ namespace DevelopmentToolList
             // 初始化mysql
             string currentPath = System.AppDomain.CurrentDomain.BaseDirectory;
             string mysqlPath = currentPath + "Applications\\MySQL\\bin";
-            new Mysql().initMysql(mysqlPath);
+            // 使用多线程执行该命令，因为在该步会消耗非常多的时间，影响用户体验
+            Thread thread = new Thread(new ParameterizedThreadStart(new Mysql().initMysql));
+            thread.Start(mysqlPath);
         }
 
         // 点击redis按钮
