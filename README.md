@@ -10,4 +10,4 @@
 
 # 下载
 
-安装包已经上传
+安装包已经上传到坚果云：https://www.jianguoyun.com/p/DRjA8TkQ5o38BxifqLYC
