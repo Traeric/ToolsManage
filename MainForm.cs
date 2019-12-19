@@ -280,6 +280,7 @@ namespace DevelopmentToolList
         // 退出程序
         private void 退出XToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.notifyIcon.Dispose();
             System.Environment.Exit(0);  // 关闭程序
         }
 
