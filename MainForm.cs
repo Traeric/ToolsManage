@@ -12,6 +12,7 @@ using System.Diagnostics;
 using ToolsManage;
 using System.IO;
 using System.Threading;
+using ToolsManage.apps;
 
 namespace DevelopmentToolList
 {
@@ -78,6 +79,21 @@ namespace DevelopmentToolList
             {
                 // 没有开启
                 this.tomcat_status.BackColor = Color.Red;
+            }
+            /*
+             * 检查Apache是否开启
+             */
+            if (Utils.testConnect(80))
+            {
+                // 开启成功
+                //this.tomcat_status.BackColor = Color.Lime;
+                this.logInfo.AppendText("Apache正在运行！  " + DateTime.Now.ToLongTimeString().ToString() + "\r\n");
+
+            }
+            else
+            {
+                // 没有开启
+                //this.tomcat_status.BackColor = Color.Red;
             }
         }
 
@@ -513,6 +529,25 @@ namespace DevelopmentToolList
                     System.Diagnostics.Process.Start("explorer.exe", this.saveLog.FileName);
                 }
             }
+        }
+
+        // 打开操作MySQL的窗口
+        private void 操作MySQLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // 修改apache文件并打开服务
+            Thread thread = new Thread(new ParameterizedThreadStart(new Apache().changeConfFile));
+            thread.Start(rootPath);
+
+            // 打开mysql窗口
+            MySQLForm mySQLForm = new MySQLForm();
+            mySQLForm.Show();
+        }
+
+        // 打开redis窗口
+        private void 操作redisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RedisForm redisForm = new RedisForm();
+            redisForm.Show();
         }
     }
 }

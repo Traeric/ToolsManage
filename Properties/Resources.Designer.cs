@@ -73,6 +73,16 @@ namespace ToolsManage.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Adminer {
+            get {
+                object obj = ResourceManager.GetObject("Adminer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap b_bookmark {
             get {
                 object obj = ResourceManager.GetObject("b_bookmark", resourceCulture);
@@ -136,6 +146,16 @@ namespace ToolsManage.Properties {
         internal static System.Drawing.Bitmap cmd {
             get {
                 object obj = ResourceManager.GetObject("cmd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap database {
+            get {
+                object obj = ResourceManager.GetObject("database", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

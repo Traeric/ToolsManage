@@ -11,3 +11,5 @@ G:\ToolsManage\obj\Debug\DevelopmentToolList.MainForm.resources
 G:\ToolsManage\obj\Debug\ToolsManage.csprojAssemblyReference.cache
 G:\ToolsManage\obj\Debug\ToolsManage.JDKForm.resources
 G:\ToolsManage\obj\Debug\ToolsManage.MavenForm.resources
+G:\ToolsManage\obj\Debug\ToolsManage.MySQLForm.resources
+G:\ToolsManage\obj\Debug\ToolsManage.RedisForm.resources

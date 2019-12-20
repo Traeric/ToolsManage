@@ -31,6 +31,26 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.topMenu = new System.Windows.Forms.MenuStrip();
+            this.文件FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.打开hostToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.Cmd_MySQLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmd操作redisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.打开cmdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.退出XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.数据库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.操作MySQLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.操作redisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.打开文件位置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mySQLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.redisToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tomcatToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mavenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jDKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.软件根目录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.软件站点ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.github仓库地址ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.作者GitHub主页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Tomcat = new System.Windows.Forms.Button();
             this.mysql = new System.Windows.Forms.Button();
             this.redis = new System.Windows.Forms.Button();
@@ -41,6 +61,7 @@
             this.Maven = new System.Windows.Forms.Button();
             this.left_line = new System.Windows.Forms.Label();
             this.rightPanel = new System.Windows.Forms.Panel();
+            this.backColor = new System.Windows.Forms.Label();
             this.logGroup = new System.Windows.Forms.GroupBox();
             this.printButtom = new System.Windows.Forms.Button();
             this.logInfo = new System.Windows.Forms.TextBox();
@@ -64,31 +85,13 @@
             this.start = new System.Windows.Forms.Button();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.文件FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.打开hostToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.Cmd_MySQLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmd操作redisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.打开cmdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.退出XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.打开文件位置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mySQLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.redisToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tomcatToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mavenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jDKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.软件根目录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.软件站点ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.github仓库地址ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.作者GitHub主页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.服务管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.启动全部ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.停止全部ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.重启全部ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.退出程序ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backColor = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.saveLog = new System.Windows.Forms.SaveFileDialog();
             this.topMenu.SuspendLayout();
             this.menuPanel.SuspendLayout();
@@ -106,6 +109,7 @@
             this.topMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.topMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.文件FToolStripMenuItem,
+            this.数据库ToolStripMenuItem,
             this.打开文件位置ToolStripMenuItem,
             this.软件站点ToolStripMenuItem});
             this.topMenu.Location = new System.Drawing.Point(0, 0);
@@ -113,6 +117,179 @@
             this.topMenu.Size = new System.Drawing.Size(566, 23);
             this.topMenu.TabIndex = 3;
             this.topMenu.Text = "menuStrip1";
+            // 
+            // 文件FToolStripMenuItem
+            // 
+            this.文件FToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.打开hostToolStripMenuItem1,
+            this.Cmd_MySQLToolStripMenuItem,
+            this.cmd操作redisToolStripMenuItem,
+            this.打开cmdToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.退出XToolStripMenuItem});
+            this.文件FToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.b_bookmark;
+            this.文件FToolStripMenuItem.Name = "文件FToolStripMenuItem";
+            this.文件FToolStripMenuItem.Size = new System.Drawing.Size(60, 19);
+            this.文件FToolStripMenuItem.Text = "文件";
+            // 
+            // 打开hostToolStripMenuItem1
+            // 
+            this.打开hostToolStripMenuItem1.Image = global::ToolsManage.Properties.Resources.b_sbrowse;
+            this.打开hostToolStripMenuItem1.Name = "打开hostToolStripMenuItem1";
+            this.打开hostToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
+            this.打开hostToolStripMenuItem1.Text = "打开hosts";
+            this.打开hostToolStripMenuItem1.Click += new System.EventHandler(this.打开hostToolStripMenuItem1_Click);
+            // 
+            // Cmd_MySQLToolStripMenuItem
+            // 
+            this.Cmd_MySQLToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.cmd;
+            this.Cmd_MySQLToolStripMenuItem.Name = "Cmd_MySQLToolStripMenuItem";
+            this.Cmd_MySQLToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.Cmd_MySQLToolStripMenuItem.Text = "cmd操作MySQL";
+            this.Cmd_MySQLToolStripMenuItem.Click += new System.EventHandler(this.Cmd_MySQLToolStripMenuItem_Click);
+            // 
+            // cmd操作redisToolStripMenuItem
+            // 
+            this.cmd操作redisToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.cmd;
+            this.cmd操作redisToolStripMenuItem.Name = "cmd操作redisToolStripMenuItem";
+            this.cmd操作redisToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.cmd操作redisToolStripMenuItem.Text = "cmd操作redis";
+            this.cmd操作redisToolStripMenuItem.Click += new System.EventHandler(this.cmd操作redisToolStripMenuItem_Click);
+            // 
+            // 打开cmdToolStripMenuItem
+            // 
+            this.打开cmdToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.terminal;
+            this.打开cmdToolStripMenuItem.Name = "打开cmdToolStripMenuItem";
+            this.打开cmdToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.打开cmdToolStripMenuItem.Text = "打开cmd";
+            this.打开cmdToolStripMenuItem.Click += new System.EventHandler(this.打开cmdToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(163, 6);
+            // 
+            // 退出XToolStripMenuItem
+            // 
+            this.退出XToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.b_drop;
+            this.退出XToolStripMenuItem.Name = "退出XToolStripMenuItem";
+            this.退出XToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.退出XToolStripMenuItem.Text = "退出程序";
+            this.退出XToolStripMenuItem.Click += new System.EventHandler(this.退出XToolStripMenuItem_Click);
+            // 
+            // 数据库ToolStripMenuItem
+            // 
+            this.数据库ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.操作MySQLToolStripMenuItem,
+            this.操作redisToolStripMenuItem});
+            this.数据库ToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.database;
+            this.数据库ToolStripMenuItem.Name = "数据库ToolStripMenuItem";
+            this.数据库ToolStripMenuItem.Size = new System.Drawing.Size(72, 19);
+            this.数据库ToolStripMenuItem.Text = "数据库";
+            // 
+            // 操作MySQLToolStripMenuItem
+            // 
+            this.操作MySQLToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.mysql1;
+            this.操作MySQLToolStripMenuItem.Name = "操作MySQLToolStripMenuItem";
+            this.操作MySQLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.操作MySQLToolStripMenuItem.Text = "操作MySQL";
+            this.操作MySQLToolStripMenuItem.Click += new System.EventHandler(this.操作MySQLToolStripMenuItem_Click);
+            // 
+            // 操作redisToolStripMenuItem
+            // 
+            this.操作redisToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.redis;
+            this.操作redisToolStripMenuItem.Name = "操作redisToolStripMenuItem";
+            this.操作redisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.操作redisToolStripMenuItem.Text = "操作redis";
+            this.操作redisToolStripMenuItem.Click += new System.EventHandler(this.操作redisToolStripMenuItem_Click);
+            // 
+            // 打开文件位置ToolStripMenuItem
+            // 
+            this.打开文件位置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mySQLToolStripMenuItem1,
+            this.redisToolStripMenuItem1,
+            this.tomcatToolStripMenuItem1,
+            this.mavenToolStripMenuItem,
+            this.jDKToolStripMenuItem,
+            this.软件根目录ToolStripMenuItem});
+            this.打开文件位置ToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.bottom;
+            this.打开文件位置ToolStripMenuItem.Name = "打开文件位置ToolStripMenuItem";
+            this.打开文件位置ToolStripMenuItem.Size = new System.Drawing.Size(108, 19);
+            this.打开文件位置ToolStripMenuItem.Text = "打开文件位置";
+            // 
+            // mySQLToolStripMenuItem1
+            // 
+            this.mySQLToolStripMenuItem1.Image = global::ToolsManage.Properties.Resources.mysql1;
+            this.mySQLToolStripMenuItem1.Name = "mySQLToolStripMenuItem1";
+            this.mySQLToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
+            this.mySQLToolStripMenuItem1.Text = "MySQL";
+            this.mySQLToolStripMenuItem1.Click += new System.EventHandler(this.mySQLToolStripMenuItem1_Click);
+            // 
+            // redisToolStripMenuItem1
+            // 
+            this.redisToolStripMenuItem1.Image = global::ToolsManage.Properties.Resources.redis;
+            this.redisToolStripMenuItem1.Name = "redisToolStripMenuItem1";
+            this.redisToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
+            this.redisToolStripMenuItem1.Text = "redis";
+            this.redisToolStripMenuItem1.Click += new System.EventHandler(this.redisToolStripMenuItem1_Click);
+            // 
+            // tomcatToolStripMenuItem1
+            // 
+            this.tomcatToolStripMenuItem1.Image = global::ToolsManage.Properties.Resources.Tomcat;
+            this.tomcatToolStripMenuItem1.Name = "tomcatToolStripMenuItem1";
+            this.tomcatToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
+            this.tomcatToolStripMenuItem1.Text = "Tomcat";
+            this.tomcatToolStripMenuItem1.Click += new System.EventHandler(this.tomcatToolStripMenuItem1_Click);
+            // 
+            // mavenToolStripMenuItem
+            // 
+            this.mavenToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.maven;
+            this.mavenToolStripMenuItem.Name = "mavenToolStripMenuItem";
+            this.mavenToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.mavenToolStripMenuItem.Text = "Maven";
+            this.mavenToolStripMenuItem.Click += new System.EventHandler(this.mavenToolStripMenuItem_Click);
+            // 
+            // jDKToolStripMenuItem
+            // 
+            this.jDKToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.jdk;
+            this.jDKToolStripMenuItem.Name = "jDKToolStripMenuItem";
+            this.jDKToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.jDKToolStripMenuItem.Text = "JDK";
+            this.jDKToolStripMenuItem.Click += new System.EventHandler(this.jDKToolStripMenuItem_Click);
+            // 
+            // 软件根目录ToolStripMenuItem
+            // 
+            this.软件根目录ToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.btn_lastorigin_press_wpp;
+            this.软件根目录ToolStripMenuItem.Name = "软件根目录ToolStripMenuItem";
+            this.软件根目录ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.软件根目录ToolStripMenuItem.Text = "软件根目录";
+            this.软件根目录ToolStripMenuItem.Click += new System.EventHandler(this.软件根目录ToolStripMenuItem_Click);
+            // 
+            // 软件站点ToolStripMenuItem
+            // 
+            this.软件站点ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.github仓库地址ToolStripMenuItem,
+            this.作者GitHub主页ToolStripMenuItem});
+            this.软件站点ToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.marker_gold;
+            this.软件站点ToolStripMenuItem.Name = "软件站点ToolStripMenuItem";
+            this.软件站点ToolStripMenuItem.Size = new System.Drawing.Size(84, 19);
+            this.软件站点ToolStripMenuItem.Text = "软件站点";
+            // 
+            // github仓库地址ToolStripMenuItem
+            // 
+            this.github仓库地址ToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.github;
+            this.github仓库地址ToolStripMenuItem.Name = "github仓库地址ToolStripMenuItem";
+            this.github仓库地址ToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.github仓库地址ToolStripMenuItem.Text = "GitHub仓库地址";
+            this.github仓库地址ToolStripMenuItem.Click += new System.EventHandler(this.github仓库地址ToolStripMenuItem_Click);
+            // 
+            // 作者GitHub主页ToolStripMenuItem
+            // 
+            this.作者GitHub主页ToolStripMenuItem.Image = global::ToolsManage.Properties.Resources._34062997;
+            this.作者GitHub主页ToolStripMenuItem.Name = "作者GitHub主页ToolStripMenuItem";
+            this.作者GitHub主页ToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.作者GitHub主页ToolStripMenuItem.Text = "作者GitHub主页";
+            this.作者GitHub主页ToolStripMenuItem.Click += new System.EventHandler(this.作者GitHub主页ToolStripMenuItem_Click);
             // 
             // Tomcat
             // 
@@ -253,6 +430,18 @@
             this.rightPanel.Name = "rightPanel";
             this.rightPanel.Size = new System.Drawing.Size(470, 425);
             this.rightPanel.TabIndex = 9;
+            // 
+            // backColor
+            // 
+            this.backColor.AutoSize = true;
+            this.backColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.backColor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.backColor.Location = new System.Drawing.Point(86, 329);
+            this.backColor.Name = "backColor";
+            this.backColor.Size = new System.Drawing.Size(41, 12);
+            this.backColor.TabIndex = 3;
+            this.backColor.Text = "label1";
+            this.backColor.Visible = false;
             // 
             // logGroup
             // 
@@ -511,158 +700,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(125, 54);
             // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(121, 6);
-            // 
-            // 文件FToolStripMenuItem
-            // 
-            this.文件FToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.打开hostToolStripMenuItem1,
-            this.Cmd_MySQLToolStripMenuItem,
-            this.cmd操作redisToolStripMenuItem,
-            this.打开cmdToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.退出XToolStripMenuItem});
-            this.文件FToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.b_bookmark;
-            this.文件FToolStripMenuItem.Name = "文件FToolStripMenuItem";
-            this.文件FToolStripMenuItem.Size = new System.Drawing.Size(60, 19);
-            this.文件FToolStripMenuItem.Text = "文件";
-            // 
-            // 打开hostToolStripMenuItem1
-            // 
-            this.打开hostToolStripMenuItem1.Image = global::ToolsManage.Properties.Resources.b_sbrowse;
-            this.打开hostToolStripMenuItem1.Name = "打开hostToolStripMenuItem1";
-            this.打开hostToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
-            this.打开hostToolStripMenuItem1.Text = "打开hosts";
-            this.打开hostToolStripMenuItem1.Click += new System.EventHandler(this.打开hostToolStripMenuItem1_Click);
-            // 
-            // Cmd_MySQLToolStripMenuItem
-            // 
-            this.Cmd_MySQLToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.cmd;
-            this.Cmd_MySQLToolStripMenuItem.Name = "Cmd_MySQLToolStripMenuItem";
-            this.Cmd_MySQLToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.Cmd_MySQLToolStripMenuItem.Text = "cmd操作MySQL";
-            this.Cmd_MySQLToolStripMenuItem.Click += new System.EventHandler(this.Cmd_MySQLToolStripMenuItem_Click);
-            // 
-            // cmd操作redisToolStripMenuItem
-            // 
-            this.cmd操作redisToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.cmd;
-            this.cmd操作redisToolStripMenuItem.Name = "cmd操作redisToolStripMenuItem";
-            this.cmd操作redisToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.cmd操作redisToolStripMenuItem.Text = "cmd操作redis";
-            this.cmd操作redisToolStripMenuItem.Click += new System.EventHandler(this.cmd操作redisToolStripMenuItem_Click);
-            // 
-            // 打开cmdToolStripMenuItem
-            // 
-            this.打开cmdToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.terminal;
-            this.打开cmdToolStripMenuItem.Name = "打开cmdToolStripMenuItem";
-            this.打开cmdToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.打开cmdToolStripMenuItem.Text = "打开cmd";
-            this.打开cmdToolStripMenuItem.Click += new System.EventHandler(this.打开cmdToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(163, 6);
-            // 
-            // 退出XToolStripMenuItem
-            // 
-            this.退出XToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.b_drop;
-            this.退出XToolStripMenuItem.Name = "退出XToolStripMenuItem";
-            this.退出XToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.退出XToolStripMenuItem.Text = "退出程序";
-            this.退出XToolStripMenuItem.Click += new System.EventHandler(this.退出XToolStripMenuItem_Click);
-            // 
-            // 打开文件位置ToolStripMenuItem
-            // 
-            this.打开文件位置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mySQLToolStripMenuItem1,
-            this.redisToolStripMenuItem1,
-            this.tomcatToolStripMenuItem1,
-            this.mavenToolStripMenuItem,
-            this.jDKToolStripMenuItem,
-            this.软件根目录ToolStripMenuItem});
-            this.打开文件位置ToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.bottom;
-            this.打开文件位置ToolStripMenuItem.Name = "打开文件位置ToolStripMenuItem";
-            this.打开文件位置ToolStripMenuItem.Size = new System.Drawing.Size(108, 19);
-            this.打开文件位置ToolStripMenuItem.Text = "打开文件位置";
-            // 
-            // mySQLToolStripMenuItem1
-            // 
-            this.mySQLToolStripMenuItem1.Image = global::ToolsManage.Properties.Resources.mysql1;
-            this.mySQLToolStripMenuItem1.Name = "mySQLToolStripMenuItem1";
-            this.mySQLToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.mySQLToolStripMenuItem1.Text = "MySQL";
-            this.mySQLToolStripMenuItem1.Click += new System.EventHandler(this.mySQLToolStripMenuItem1_Click);
-            // 
-            // redisToolStripMenuItem1
-            // 
-            this.redisToolStripMenuItem1.Image = global::ToolsManage.Properties.Resources.redis;
-            this.redisToolStripMenuItem1.Name = "redisToolStripMenuItem1";
-            this.redisToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.redisToolStripMenuItem1.Text = "redis";
-            this.redisToolStripMenuItem1.Click += new System.EventHandler(this.redisToolStripMenuItem1_Click);
-            // 
-            // tomcatToolStripMenuItem1
-            // 
-            this.tomcatToolStripMenuItem1.Image = global::ToolsManage.Properties.Resources.Tomcat;
-            this.tomcatToolStripMenuItem1.Name = "tomcatToolStripMenuItem1";
-            this.tomcatToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.tomcatToolStripMenuItem1.Text = "Tomcat";
-            this.tomcatToolStripMenuItem1.Click += new System.EventHandler(this.tomcatToolStripMenuItem1_Click);
-            // 
-            // mavenToolStripMenuItem
-            // 
-            this.mavenToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.maven;
-            this.mavenToolStripMenuItem.Name = "mavenToolStripMenuItem";
-            this.mavenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.mavenToolStripMenuItem.Text = "Maven";
-            this.mavenToolStripMenuItem.Click += new System.EventHandler(this.mavenToolStripMenuItem_Click);
-            // 
-            // jDKToolStripMenuItem
-            // 
-            this.jDKToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.jdk;
-            this.jDKToolStripMenuItem.Name = "jDKToolStripMenuItem";
-            this.jDKToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.jDKToolStripMenuItem.Text = "JDK";
-            this.jDKToolStripMenuItem.Click += new System.EventHandler(this.jDKToolStripMenuItem_Click);
-            // 
-            // 软件根目录ToolStripMenuItem
-            // 
-            this.软件根目录ToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.btn_lastorigin_press_wpp;
-            this.软件根目录ToolStripMenuItem.Name = "软件根目录ToolStripMenuItem";
-            this.软件根目录ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.软件根目录ToolStripMenuItem.Text = "软件根目录";
-            this.软件根目录ToolStripMenuItem.Click += new System.EventHandler(this.软件根目录ToolStripMenuItem_Click);
-            // 
-            // 软件站点ToolStripMenuItem
-            // 
-            this.软件站点ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.github仓库地址ToolStripMenuItem,
-            this.作者GitHub主页ToolStripMenuItem});
-            this.软件站点ToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.marker_gold;
-            this.软件站点ToolStripMenuItem.Name = "软件站点ToolStripMenuItem";
-            this.软件站点ToolStripMenuItem.Size = new System.Drawing.Size(84, 19);
-            this.软件站点ToolStripMenuItem.Text = "软件站点";
-            // 
-            // github仓库地址ToolStripMenuItem
-            // 
-            this.github仓库地址ToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.github;
-            this.github仓库地址ToolStripMenuItem.Name = "github仓库地址ToolStripMenuItem";
-            this.github仓库地址ToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.github仓库地址ToolStripMenuItem.Text = "GitHub仓库地址";
-            this.github仓库地址ToolStripMenuItem.Click += new System.EventHandler(this.github仓库地址ToolStripMenuItem_Click);
-            // 
-            // 作者GitHub主页ToolStripMenuItem
-            // 
-            this.作者GitHub主页ToolStripMenuItem.Image = global::ToolsManage.Properties.Resources._34062997;
-            this.作者GitHub主页ToolStripMenuItem.Name = "作者GitHub主页ToolStripMenuItem";
-            this.作者GitHub主页ToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.作者GitHub主页ToolStripMenuItem.Text = "作者GitHub主页";
-            this.作者GitHub主页ToolStripMenuItem.Click += new System.EventHandler(this.作者GitHub主页ToolStripMenuItem_Click);
-            // 
             // 服务管理ToolStripMenuItem
             // 
             this.服务管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -695,6 +732,11 @@
             this.重启全部ToolStripMenuItem.Text = "重启全部";
             this.重启全部ToolStripMenuItem.Click += new System.EventHandler(this.重启全部ToolStripMenuItem_Click);
             // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(121, 6);
+            // 
             // 退出程序ToolStripMenuItem
             // 
             this.退出程序ToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.b_drop;
@@ -702,18 +744,6 @@
             this.退出程序ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.退出程序ToolStripMenuItem.Text = "退出程序";
             this.退出程序ToolStripMenuItem.Click += new System.EventHandler(this.退出程序ToolStripMenuItem_Click);
-            // 
-            // backColor
-            // 
-            this.backColor.AutoSize = true;
-            this.backColor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.backColor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.backColor.Location = new System.Drawing.Point(86, 329);
-            this.backColor.Name = "backColor";
-            this.backColor.Size = new System.Drawing.Size(41, 12);
-            this.backColor.TabIndex = 3;
-            this.backColor.Text = "label1";
-            this.backColor.Visible = false;
             // 
             // saveLog
             // 
@@ -818,6 +848,9 @@
         private System.Windows.Forms.ToolStripMenuItem 作者GitHub主页ToolStripMenuItem;
         private System.Windows.Forms.Label backColor;
         private System.Windows.Forms.SaveFileDialog saveLog;
+        private System.Windows.Forms.ToolStripMenuItem 数据库ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 操作MySQLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 操作redisToolStripMenuItem;
     }
 }
 
