@@ -16,5 +16,11 @@ namespace ToolsManage
         {
             InitializeComponent();
         }
+
+        // 打开管理redis的网站
+        private void sirviaBtn_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://localhost:8080/admin/redis/login");
+        }
     }
 }

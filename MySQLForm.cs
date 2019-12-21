@@ -47,7 +47,13 @@ namespace ToolsManage
             string[] commands = new string[3];
             commands[0] = ((string)mysqlPath).Split(':')[0] + ":";
             commands[1] = "cd " + ((string)mysqlPath).Split(':')[1];
-            commands[2] = string.Format("mysqladmin -u root -p{0} password {1}", oldPassword, newPassword);
+            if (contents[1] == "")
+            {
+                commands[2] = string.Format("mysqladmin -u root password {0}", newPassword);
+            } else
+            {
+                commands[2] = string.Format("mysqladmin -u root -p{0} password {1}", oldPassword, newPassword);
+            }
             try
             {
                 Utils.execCMD(commands);
