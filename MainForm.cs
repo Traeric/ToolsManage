@@ -549,6 +549,12 @@ namespace DevelopmentToolList
             RedisForm redisForm = new RedisForm();
             redisForm.Show();
         }
+
+        // 打开测试端口的窗口
+        private void TestPortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new TestPortForm().Show();
+        }
     }
 }
 

@@ -130,11 +130,17 @@
   <data name="btn_lastorigin_press_wpp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn_lastorigin_press_wpp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="b_tblops1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\b_tblops1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="redis" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\redis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="34062997" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\34062997.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Adminer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Adminer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tomcat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tomcat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,7 +175,7 @@
   <data name="database" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\database.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Adminer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Adminer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="b_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\b_home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

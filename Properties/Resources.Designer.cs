@@ -103,6 +103,16 @@ namespace ToolsManage.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap b_home {
+            get {
+                object obj = ResourceManager.GetObject("b_home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap b_sbrowse {
             get {
                 object obj = ResourceManager.GetObject("b_sbrowse", resourceCulture);
@@ -116,6 +126,16 @@ namespace ToolsManage.Properties {
         internal static System.Drawing.Bitmap b_tblops {
             get {
                 object obj = ResourceManager.GetObject("b_tblops", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap b_tblops1 {
+            get {
+                object obj = ResourceManager.GetObject("b_tblops1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

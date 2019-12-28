@@ -13,3 +13,4 @@ G:\ToolsManage\obj\Debug\ToolsManage.JDKForm.resources
 G:\ToolsManage\obj\Debug\ToolsManage.MavenForm.resources
 G:\ToolsManage\obj\Debug\ToolsManage.MySQLForm.resources
 G:\ToolsManage\obj\Debug\ToolsManage.RedisForm.resources
+G:\ToolsManage\obj\Debug\ToolsManage.TestPortForm.resources

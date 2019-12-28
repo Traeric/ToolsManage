@@ -48,6 +48,8 @@
             this.mavenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jDKToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.软件根目录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TestPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.软件站点ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.github仓库地址ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.作者GitHub主页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -111,6 +113,7 @@
             this.文件FToolStripMenuItem,
             this.数据库ToolStripMenuItem,
             this.打开文件位置ToolStripMenuItem,
+            this.工具ToolStripMenuItem,
             this.软件站点ToolStripMenuItem});
             this.topMenu.Location = new System.Drawing.Point(0, 0);
             this.topMenu.Name = "topMenu";
@@ -191,7 +194,7 @@
             // 
             this.操作MySQLToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.mysql1;
             this.操作MySQLToolStripMenuItem.Name = "操作MySQLToolStripMenuItem";
-            this.操作MySQLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.操作MySQLToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.操作MySQLToolStripMenuItem.Text = "操作MySQL";
             this.操作MySQLToolStripMenuItem.Click += new System.EventHandler(this.操作MySQLToolStripMenuItem_Click);
             // 
@@ -199,7 +202,7 @@
             // 
             this.操作redisToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.redis;
             this.操作redisToolStripMenuItem.Name = "操作redisToolStripMenuItem";
-            this.操作redisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.操作redisToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.操作redisToolStripMenuItem.Text = "操作redis";
             this.操作redisToolStripMenuItem.Click += new System.EventHandler(this.操作redisToolStripMenuItem_Click);
             // 
@@ -264,6 +267,23 @@
             this.软件根目录ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.软件根目录ToolStripMenuItem.Text = "软件根目录";
             this.软件根目录ToolStripMenuItem.Click += new System.EventHandler(this.软件根目录ToolStripMenuItem_Click);
+            // 
+            // 工具ToolStripMenuItem
+            // 
+            this.工具ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TestPortToolStripMenuItem});
+            this.工具ToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.b_tblops1;
+            this.工具ToolStripMenuItem.Name = "工具ToolStripMenuItem";
+            this.工具ToolStripMenuItem.Size = new System.Drawing.Size(60, 19);
+            this.工具ToolStripMenuItem.Text = "工具";
+            // 
+            // TestPortToolStripMenuItem
+            // 
+            this.TestPortToolStripMenuItem.Image = global::ToolsManage.Properties.Resources.b_home;
+            this.TestPortToolStripMenuItem.Name = "TestPortToolStripMenuItem";
+            this.TestPortToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.TestPortToolStripMenuItem.Text = "测试端口";
+            this.TestPortToolStripMenuItem.Click += new System.EventHandler(this.TestPortToolStripMenuItem_Click);
             // 
             // 软件站点ToolStripMenuItem
             // 
@@ -765,7 +785,7 @@
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ToolList 1.0.0";
+            this.Text = "ToolList 1.1.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.topMenu.ResumeLayout(false);
@@ -851,6 +871,8 @@
         private System.Windows.Forms.ToolStripMenuItem 数据库ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 操作MySQLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 操作redisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 工具ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TestPortToolStripMenuItem;
     }
 }
 

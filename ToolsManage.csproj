@@ -99,6 +99,12 @@
     <Compile Include="RedisForm.Designer.cs">
       <DependentUpon>RedisForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestPortForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestPortForm.Designer.cs">
+      <DependentUpon>TestPortForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="JDKForm.resx">
       <DependentUpon>JDKForm.cs</DependentUpon>
@@ -124,6 +130,9 @@
     </Compile>
     <EmbeddedResource Include="RedisForm.resx">
       <DependentUpon>RedisForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestPortForm.resx">
+      <DependentUpon>TestPortForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\app.manifest" />
@@ -187,6 +196,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bitbug_favicon.ico" />
+    <None Include="Resources\b_home.png" />
+    <None Include="Resources\b_tblops1.png" />
     <None Include="Resources\Adminer.png" />
     <None Include="Resources\database.png" />
   </ItemGroup>
